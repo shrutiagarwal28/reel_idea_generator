@@ -9,7 +9,13 @@ key = os.getenv("GENAI_API_KEY")
 client = genai.Client(api_key=key)
 
 def generate_instagram_caption():
-    description = input("Enter a wedding video description: ")
+
+    while True:
+        description = input("Enter a wedding video description: ")
+        if description.strip():
+            break
+        print("Description cannot be empty. Please try again.")
+
     prompt = (
         "Generate 5 creative Instagram captions and 5 relevant hashtags for the following wedding video description. "
         "Each caption should be wedding-focused and emotional. "
