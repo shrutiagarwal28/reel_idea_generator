@@ -1,17 +1,10 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-from app.genai import generate_instagram_caption
+from app.routes import caption_gen
 
-app = FastAPI()
+app = FastAPI(
+    title="Instagram Wedding Caption Generator",
+    description="Generate creative Instagram captions and hashtags for wedding reels",
+    version="1.0"
+)
 
-class CaptionRequest(BaseModel):
-    description: str
-    number_of_captions: int = 5
-
-@app.post("/generate-caption/")
-def get_caption(req: CaptionRequest):
-    """
-    API endpoint to generate Instagram captions based on a wedding video description.
-    """
-    result = generate_instagram_caption(req.description)
-    return result
+app.include_router(caption_gen.router, prefix="/weddings", tags=["Instagram Captions"])
