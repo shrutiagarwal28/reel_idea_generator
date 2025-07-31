@@ -1,0 +1,24 @@
+.venv
+__pycache__/
+*.pyc
+outputs/
+.env
+.git/
+.DS_Store
+*.log
+#node_modules/
+
+# Ignore test results and coverage
+*.coverage
+htmlcov/
+
+# Ignore IDE/project files
+*.iml
+.idea/
+.vscode/
+
+# Ignore deployment guides and markdown docs
+fastapi_ci_cd_guide.md
+RenderDeploymentGuide.md
+README.md
+Procfile
