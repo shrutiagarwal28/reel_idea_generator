@@ -4,7 +4,7 @@
 This project, **Reel Idea Generator**, is designed to help users generate creative video ideas easily and efficiently. It leverages FastAPI for a robust backend, providing a sleek and responsive user interface.
 
 ## Features
-- Idea generation based on user input.
+- Idea generation based on user input/description of reel
 - Suggestions for video content and ideas.
 - User-friendly interface.
 - RESTful API for easy integration.
